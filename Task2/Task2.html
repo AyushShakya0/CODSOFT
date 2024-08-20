@@ -3,227 +3,397 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="Task2.css" />
+    <title>Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Custom scrollbar for the main content */
+      .content {
+        scrollbar-width: thin;
+        scrollbar-color: #8296bd #0f172a;
+      }
+      .content::-webkit-scrollbar {
+        width: 8px;
+      }
+      .content::-webkit-scrollbar-track {
+        background: #0f172a;
+      }
+      .content::-webkit-scrollbar-thumb {
+        background-color: #8296bd;
+        border-radius: 4px;
+        border: 2px solid #0f172a;
+      }
+      /* Specific styling for Gmail, Instagram, GitHub, LinkedIn, and Phone icons */
+      .contact-icon {
+        filter: invert(80%) sepia(100%) saturate(500%) hue-rotate(180deg);
+      }
+
+      /* Custom Colors */
+      body {
+        background-color: #0f172a;
+        color: #8296bd;
+      }
+      h1,
+      h2,
+      h3 {
+        color: #cbd7e9; /* Lighter version of #8296bd */
+      }
+      /* Active link styles */
+      .active {
+        color: #ffffff; /* Text color for the active link */
+        font-weight: 700; /* Bold text for the active link */
+      }
+
+      /* Gradient text effect on hover */
+      .gradient-hover {
+        transition: color 0.3s ease; /* Smooth transition */
+      }
+
+      .gradient-hover:hover {
+        background: linear-gradient(
+          90deg,
+          #7925a3,
+          /* First color */ #70b319 /* Second color */
+        ); /* Gradient colors */
+        -webkit-background-clip: text; /* Clip background to text for WebKit browsers */
+        background-clip: text; /* Clip background to text for other browsers */
+        color: transparent; /* Make text color transparent */
+      }
+
+      .cursor {
+        position: fixed;
+        width: 900px; /* Adjust size as needed */
+        height: 900px; /* Adjust size as needed */
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.02) 0%,
+          /* Lighter color with increased opacity */ rgba(255, 255, 255, 0) 70%
+            /* Blends into the background smoothly */
+        );
+        pointer-events: none;
+        transform: translate(-50%, -50%); /* Center the cursor */
+      }
+
+      .glass-effect {
+        border: 1px solid rgba(255, 255, 255, 0.5); /* White border with some opacity */
+        backdrop-filter: blur(10px); /* Glass effect */
+        border-radius: 8px; /* Optional: rounded corners for a smoother look */
+        padding: 8px; /* Adjust padding as needed */
+      }
+    </style>
   </head>
-  <body>
-    <header>
-      <nav>
-        <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">
-            ☰
-        </button>
-        <ul>
-            <li><a href="#intro">Introduction</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    </header>
-    <section id="intro">
-      <h1>Welcome to My Portfolio</h1>
-      <p>Hi, I'm Ayush Shakya, a passionate web developer.</p>
-      <p>
-        I specialize in creating dynamic and responsive web applications using
-        the latest technologies. With a strong foundation in both front-end and
-        back-end development.
-      </p>
-      <p>
-        I strive to deliver seamless user experiences and efficient solutions.
-      </p>
-      <p>
-        Explore my projects to see how I turn ideas into reality, and feel free
-        to reach out if you'd like to collaborate or learn more about my work.
-      </p>
-    </section>
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="project-container">
-        <div class="project">
-          <h3>Food Delivery App</h3>
-          <p>
-            This project is a comprehensive food delivery application developed
-            using Laravel for the backend and React for the frontend. The app
-            allows users to browse through a variety of restaurants and dishes,
-            place orders, and track delivery status in real-time.
-          </p>
-          <p><strong>Features include:</strong></p>
-          <ul>
-            <li>User authentication and authorization</li>
-            <li>
-              Responsive user interface for browsing menus and placing orders
-            </li>
-            <li>Real-time order tracking and notifications</li>
-            <li>Admin panel for managing restaurants, menus, and orders</li>
-            <li>Integration with payment gateways for secure transactions</li>
-          </ul>
-          <p>
-            This project showcases my skills in full-stack development, focusing
-            on creating a seamless user experience and efficient backend
-            operations.
-          </p>
-        </div>
-        <div class="project">
-          <h3>Traffic Management System</h3>
-          <p>
-            This project is a Traffic Management System developed using PHP for
-            the backend and HTML/CSS for the frontend. The system is designed to
-            streamline and optimize the management of traffic flow and
-            infrastructure.
-          </p>
-          <p><strong>Features include:</strong></p>
-          <ul>
-            <li>Real-time traffic monitoring and reporting</li>
-            <li>
-              User-friendly interface for traffic controllers and administrators
-            </li>
-            <li>Dynamic traffic signal management and optimization</li>
-            <li>Incident reporting and management</li>
-          </ul>
-          <p>
-            In this project, I contributed as a business analyst, focusing on
-            understanding user needs and translating them into functional
-            requirements. This experience enhanced my ability to bridge the gap
-            between technical development and business goals.
-          </p>
-        </div>
-        <div class="project">
-          <h3>UI/UX Design of an E-commerce Website</h3>
-          <p>
-            This project involved designing a user-friendly and visually
-            appealing e-commerce website using Figma. The focus was on creating
-            an intuitive user interface and an engaging user experience that
-            enhances the online shopping journey.
-          </p>
-          <p><strong>Features include:</strong></p>
-          <ul>
-            <li>
-              Wireframes and prototypes for website layout and functionality
-            </li>
-            <li>
-              High-fidelity designs for key pages including product listings and
-              checkout
-            </li>
-            <li>
-              User flow optimization to improve navigation and conversion rates
-            </li>
-            <li>
-              Incorporation of brand elements to maintain consistency and appeal
-            </li>
-          </ul>
-          <p>
-            This project highlights my skills in UI/UX design and my ability to
-            create user-centric designs that meet both aesthetic and functional
-            requirements. It demonstrates my proficiency in Figma and my
-            understanding of user behavior.
-          </p>
-        </div>
-        <div class="project">
-          <h3>Line Following Robot</h3>
-          <p>
-            This project involved building a line-following robot using Arduino
-            and IR sensors. The robot is designed to follow a black line on a
-            white surface, making it suitable for various automation and
-            robotics applications.
-          </p>
-          <p><strong>Features include:</strong></p>
-          <ul>
-            <li>IR sensors for line detection and tracking</li>
-            <li>Arduino-based control system for precise navigation</li>
-            <li>
-              Algorithm for adjusting the robot’s movement based on sensor input
-            </li>
-            <li>Integration of motor controls for smooth operation</li>
-          </ul>
-          <p>
-            This project demonstrates my hands-on experience with robotics and
-            electronics. It showcases my ability to implement algorithms and
-            control systems, as well as my proficiency in working with Arduino
-            and sensor technology.
-          </p>
-        </div>
-      </div>
-    </section>
+  <body class="font-poppins">
+    <div class="flex">
+      <!-- Sidebar -->
+      <nav
+        class="w-full sm:w-2/5 bg-gray-900 p-6 fixed h-full overflow-auto"
+        style="padding-left: 250px; padding-top: 100px"
+      >
+        <div class="max-w-xs w-full">
+          <div class="intro mb-12">
+            <h1 class="text-5xl font-semibold mb-2 gradient-hover">
+              Ayush Shakya
+            </h1>
+            <h3 class="text-xl font-medium gradient-hover">
+              Aspiring Software Developer
+            </h3>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <div class="skills-container">
-        <div class="skill">HTML</div>
-        <div class="skill">CSS</div>
-        <div class="skill">JavaScript</div>
-        <div class="skill">React</div>
-        <div class="skill">Laravel</div>
-        <div class="skill">C</div>
-        <div class="skill">C++</div>
-        <div class="skill">Django</div>
-        <div class="skill">Python</div>
-        <div class="skill">Java</div>
-        <div class="skill">Figma</div>
+            <p class="mt-4">
+              I build efficient, user-friendly, and visually appealing web
+              applications.
+            </p>
+          </div>
+          <div class="nav mb-12">
+            <ul class="space-y-4">
+              <li>
+                <a href="#about" class="text-lg hover:text-gray-300">About</a>
+              </li>
+              <li>
+                <a href="#projects" class="text-lg hover:text-gray-300"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a href="#skills" class="text-lg hover:text-gray-300">Skills</a>
+              </li>
+            </ul>
+          </div>
+          <div class="resume mb-8">
+            <a
+              href="documents/CV.pdf"
+              class="inline-block px-4 py-2 text-lg font-semibold text-[#8296bd] border-2 border-[#8296bd] rounded-md transition-all duration-300 ease-in-out hover:text-white hover:border-white"
+              download
+            >
+              Checkout my resume
+            </a>
+          </div>
+          <div class="links">
+            <ul class="flex space-x-4">
+              <li>
+                <a
+                  href="mailto:shakyaayush82@gmail.com"
+                  class="gmail contact-icon"
+                >
+                  <img
+                    src="documents/gmail.png"
+                    alt="Email Icon"
+                    class="w-8 h-8 hover:scale-110 transition-transform"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/AyushShakya0"
+                  target="_blank"
+                  class="github contact-icon"
+                >
+                  <img
+                    src="documents/github.png"
+                    alt="GitHub Icon"
+                    class="w-8 h-8 hover:scale-110 transition-transform"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/ayush-shakya-8b06292b5/"
+                  target="_blank"
+                  class="linkedin contact-icon"
+                >
+                  <img
+                    src="documents/linkedin_c.png"
+                    alt="LinkedIn Icon"
+                    class="w-8 h-8 hover:scale-110 transition-transform"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="tel:+9779843930708" class="phone contact-icon">
+                  <img
+                    src="documents/phone.png"
+                    alt="Phone Icon"
+                    class="w-8 h-8 hover:scale-110 transition-transform"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/shakyaayush82/"
+                  target="_blank"
+                  class="instagram contact-icon"
+                >
+                  <img
+                    src="documents/instagram.png"
+                    alt="Instagram Icon"
+                    class="w-8 h-8 hover:scale-110 transition-transform"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
-        <!-- Add more skills as needed -->
-      </div>
-    </section>
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        If you'd like to get in touch, feel free to reach out to me through the
-        following channels:
-      </p>
-      <ul class="contact-info">
-        <li>
-          <a href="mailto:shakyaayush82@gmail.com" class="contact-item">
-            <img
-              src="https://static-00.iconduck.com/assets.00/gmail-icon-1024x1024-09wrt8am.png"
-              alt="Email Icon"
-              class="contact-icon"
-            />
-            <span>shakyaayush82@gmail.com</span>
-          </a>
-        </li>
-        <li>
-          <a href="tel:+9779843930708" class="contact-item">
-            <img
-              src="https://static.vecteezy.com/system/resources/thumbnails/000/420/369/small/Road_Signs_2__2882_29.jpg"
-              alt="Phone Icon"
-              class="contact-icon"
-            />
-            <span>+977 9843930708</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.linkedin.com/in/ayush-shakya-8b06292b5/"
-            target="_blank"
-            class="contact-item"
+      <!-- Main Content -->
+      <main
+        class="w-full sm:w-3/5 ml-0 sm:ml-[40%] p-6 bg-gray-900 overflow-auto"
+        style="padding-right: 250px; padding-left: 100px; padding-top: 100px"
+      >
+        <section id="about" class="mb-12">
+          <p class="text-lg leading-relaxed">
+            I specialize in creating dynamic and responsive web applications
+            using the latest technologies. With a strong foundation in both
+            front-end and back-end development, I strive to deliver seamless
+            user experiences and efficient solutions.
+          </p>
+          <p class="text-lg leading-relaxed mt-4">
+            Explore my projects to see how I turn ideas into reality, and feel
+            free to reach out if you'd like to collaborate or learn more about
+            my work.
+          </p>
+        </section>
+
+        <section id="projects" class="mb-12">
+          <h2 class="text-3xl font-semibold mb-4">Projects</h2>
+
+          <!-- Project 1 -->
+          <div
+            class="project hover:bg-white/10 rounded-lg p-4 transition mb-8 flex flex-col gap-4"
           >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
-              alt="LinkedIn Icon"
-              class="contact-icon"
-            />
-            <span>https://www.linkedin.com/in/ayush-shakya-8b06292b5/</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://github.com/AyushShakya0"
-            target="_blank"
-            class="contact-item"
-          >
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
-              alt="GitHub Icon"
-              class="contact-icon"
-            />
-            <span>https://github.com/AyushShakya0</span>
-          </a>
-        </li>
-      </ul>
-    </section>
+            <div class="project flex items-start gap-4">
+              <div class="project-date flex-none w-1/4 pt-1">
+                <h4 class="text-sm mb-4">2023 — 2024</h4>
+              </div>
+              <div class="project-content flex-1">
+                <h3 class="text-base font-bold mb-3">Food Delivery App</h3>
+                <p class="text-sm mb-4">
+                  This project is a comprehensive food delivery application
+                  developed using Laravel for the backend and React for the
+                  frontend. The app features user authentication, a responsive
+                  UI, real-time order tracking, and an admin panel for managing
+                  restaurants and orders.
+                </p>
+                <div class="tags flex flex-wrap gap-2">
+                  <span
+                    class="tag bg-gray-800 text-white px-3 py-1 rounded-full text-sm"
+                    >Laravel</span
+                  >
+                  <span
+                    class="tag bg-gray-800 text-white px-3 py-1 rounded-full text-sm"
+                    >React</span
+                  >
+                  <span
+                    class="tag bg-gray-800 text-white px-3 py-1 rounded-full text-sm"
+                    >JavaScript</span
+                  >
+                  <span
+                    class="tag bg-gray-800 text-white px-3 py-1 rounded-full text-sm"
+                    >MySQL</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <footer>
-      <p>&copy; 2024 My Portfolio</p>
-    </footer>
+          <!-- Project 2 -->
+          <div
+            class="project hover:bg-white/10 rounded-lg p-4 transition mb-8 flex flex-col gap-4"
+          >
+            <div class="project flex items-start gap-4">
+              <div class="project-date flex-none w-1/4 pt-1">
+                <h4 class="text-sm mb-4">APR- SEP 2023</h4>
+              </div>
+              <div class="project-content flex-1">
+                <h3 class="text-base font-bold mb-3">
+                  Traffic Management System
+                </h3>
+                <p class="text-sm mb-4">
+                  This project involved developing a Traffic Management System
+                  using PHP and HTML/CSS. The system is designed to monitor and
+                  manage traffic flow, providing real-time data and controls to
+                  improve traffic efficiency and reduce congestion
+                </p>
+                <div class="tags flex flex-wrap gap-2">
+                  <span
+                    class="tag bg-gray-800 text-white px-3 py-1 rounded-full text-sm"
+                    >PHP</span
+                  >
+                  <span
+                    class="tag bg-gray-800 text-white px-3 py-1 rounded-full text-sm"
+                    >HTML</span
+                  >
+                  <span
+                    class="tag bg-gray-800 text-white px-3 py-1 rounded-full text-sm"
+                    >CSS</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div
+            class="project hover:bg-white/10 rounded-lg p-4 transition mb-8 flex flex-col gap-4"
+          >
+            <div class="project flex items-start gap-4">
+              <div class="project-date flex-none w-1/4 pt-1">
+                <h4 class="text-sm mb-4">AUG-DEC 2023</h4>
+              </div>
+              <div class="project-content flex-1">
+                <h3 class="text-base font-bold text-gray-300 mb-3">
+                  UI/UX Design of an E-commerce Website
+                </h3>
+                <p class="text-sm mb-4">
+                  This project involved designing a user-friendly and visually
+                  appealing e-commerce website using Figma. The focus was on
+                  creating an intuitive user interface and an engaging user
+                  experience that enhances the online shopping journey.
+                </p>
+                <div class="tags flex flex-wrap gap-2">
+                  <span
+                    class="tag bg-gray-800 text-white px-3 py-1 rounded-full text-sm"
+                    >Figma</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div
+            class="project hover:bg-white/10 rounded-lg p-4 transition mb-8 flex flex-col gap-4"
+          >
+            <div class="project flex items-start gap-4">
+              <div class="project-date flex-none w-1/4 pt-1">
+                <h4 class="text-sm mb-4">2022-2023</h4>
+              </div>
+              <div class="project-content flex-1">
+                <h3 class="text-base font-bold text-gray-300 mb-3">
+                  Line Following Robot
+                </h3>
+                <p class="text-sm mb-4">
+                  This project involved building a line-following robot using
+                  Arduino and IR sensors. The robot is designed to follow a
+                  black line on a white surface, making it suitable for various
+                  automation and robotics applications.
+                </p>
+                <div class="tags flex flex-wrap gap-2">
+                  <span
+                    class="tag bg-gray-800 text-white px-3 py-1 rounded-full text-sm"
+                    >Arduino</span
+                  >
+                  <span
+                    class="tag bg-gray-800 text-white px-3 py-1 rounded-full text-sm"
+                    >IR Sensors</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" class="mb-12">
+          <h2 class="text-3xl font-semibold mb-4">Skills</h2>
+          <div class="skills-container p-6">
+            <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              <li class="text-center text-lg font-medium glass-effect">
+                Laravel
+              </li>
+              <li class="text-center text-lg font-medium glass-effect">PHP</li>
+              <li class="text-center text-lg font-medium glass-effect">
+                React
+              </li>
+              <li class="text-center text-lg font-medium glass-effect">
+                JavaScript
+              </li>
+              <li class="text-center text-lg font-medium glass-effect">
+                Tailwindcss
+              </li>
+              <li class="text-center text-lg font-medium glass-effect">
+                Django
+              </li>
+              <li class="text-center text-lg font-medium glass-effect">
+                Python
+              </li>
+              <li class="text-center text-lg font-medium glass-effect">Java</li>
+              <li class="text-center text-lg font-medium glass-effect">
+                Figma
+              </li>
+            </ul>
+          </div>
+        </section>
+        
+        <div class="text-center">
+          <p>&copy; 2024 Ayush Shakya. All rights reserved.</p>
+        </div>
+      </main>
+    </div>
+    <div class="cursor"></div>
+
     <script src="Task2.js"></script>
   </body>
 </html>
